@@ -1,0 +1,3 @@
+@mixin pxToRem($pixels) {
+  font-size: $pixels/16;
+}

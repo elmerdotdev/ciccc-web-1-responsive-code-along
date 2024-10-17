@@ -1,0 +1,122 @@
+@use './variables';
+@use './mixins';
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+.container {
+  font-size: 1.5rem; // 24px
+}
+
+main {
+  h1 {
+    font-size: 5.61rem;
+  }
+  section {
+    width: 100vw; // 50% of viewport/screen width
+    min-height: 100vh; // 100% of viewport height
+
+    &.section-one {
+      background-color: orange;
+      font-size: 2rem; // 32px;
+
+      h2 {
+        font-size: 4.209rem;
+      }
+    
+      p {
+        font-size: 1.063rem; // 17px
+      }
+
+      .boxes {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        width: 100%;
+        max-width: 800px;
+
+        .box {
+          border: 5px solid black;
+          height: 100px;
+        }
+      }
+    }
+
+    &.section-two {
+      background-color: red;
+    }
+
+    &.section-three {
+      background-color: blue;
+    }
+
+    &.section-four {
+      background-color: green;
+    }
+
+    &.section-five {
+      background-color: pink;
+
+      h2 {
+        background-color: orange;
+      }
+    }
+  }
+}
+
+@media (min-width: variables.$tablet) { // tablets
+  main {
+    section {
+      &.section-one {
+        padding: 1rem;
+        background-color: yellow;
+
+        h2 {
+          margin-bottom: 300px;
+          font-size: 4rem;
+        }
+
+        .boxes {
+          flex-direction: row;
+
+          .box {
+            flex: 1;
+            border-color: blue;
+          }
+        }
+      }
+
+      &.section-two {
+        h2 {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: variables.$desktop) { //desktop
+  main {
+    section {
+      &.section-one {
+        background-color: brown;
+        background-image: url('../images/dogpeace.webp');
+        background-position: center center;
+      }
+    }
+  }
+}
